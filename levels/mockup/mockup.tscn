@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://deytuyg26ollq"]
+
+[ext_resource type="Texture2D" uid="uid://bnrybd2q4f5gc" path="res://mockup/background.png" id="1_bh67r"]
+
+[sub_resource type="Curve2D" id="Curve2D_6u7gi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1157, 304, 0, 0, 0, 0, -7, 304)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hkcda"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4, 453, 0, 0, 0, 0, 1162, 453)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+texture = ExtResource("1_bh67r")
+
+[node name="PlatePath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6u7gi")
+
+[node name="SushiPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hkcda")
