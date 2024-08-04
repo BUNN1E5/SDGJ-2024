@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://dn1ucrcy820jl"]
+
+[ext_resource type="Texture2D" uid="uid://bunvhxhncfq4q" path="res://food/placeholder_gunkan/good-gunkan-sushi-placeholder.png" id="1_uhve6"]
+[ext_resource type="Texture2D" uid="uid://ekrvduf7xs0w" path="res://food/placeholder_gunkan/bad-gunkan-sushi-placeholder.png" id="2_8ydr2"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_uhve6")
+frame_1/texture = ExtResource("2_8ydr2")
+frame_1/duration = 1.0
