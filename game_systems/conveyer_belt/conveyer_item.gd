@@ -6,6 +6,7 @@ var collision : Area2D
 var being_held = false
 var bad_level = 0
 
+
 var mousePath = "/root/Main/Mouse"
 @onready var mouse : PlayerMouse = get_node(mousePath)
 #food and a plate are both conveyerItems
@@ -13,7 +14,7 @@ var mousePath = "/root/Main/Mouse"
 #these are the sprites from good to "bad"
 #a plate would have an array of 1 with just the plate item
 @export var sprites : Array[Texture]
-@export var renderder : Sprite2D
+@onready var renderder : Sprite2D = get_child(1)
 var time_in_hall = 0
 var in_hall = false
 
@@ -26,6 +27,10 @@ func _ready():
 	self.conveyer_belt = get_parent()
 	self.loop = false
 	self.rotates = false
+	if(sprites.size() > 0):
+		print(sprites.size())
+		print(min(bad_level, sprites.size()))
+		self.renderder.texture = sprites[min(bad_level, sprites.size())]
 	pass # Replace with function body.
 	
 func _input(event):

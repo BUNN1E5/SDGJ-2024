@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://deytuyg26ollq"]
+[gd_scene load_steps=19 format=3 uid="uid://deytuyg26ollq"]
 
 [ext_resource type="Script" path="res://game_systems/window_resize.gd" id="1_wuxd8"]
 [ext_resource type="Texture2D" uid="uid://bt1ylwqcwa43" path="res://mockup/good-octopus-sushi.png" id="2_7uiju"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c5h1vluiwt7wl" path="res://mockup/conveyor-belt-back-placeholder.png" id="6_tojgu"]
 [ext_resource type="Script" path="res://game_systems/player_control/mouse.gd" id="6_vpumv"]
 [ext_resource type="Texture2D" uid="uid://ds8ysbdyqs2rm" path="res://mockup/conveyor-belt-front-placeholder.png" id="7_r0ru2"]
+[ext_resource type="Texture2D" uid="uid://ldsgjrjngntb" path="res://mockup/plate-placeholder.png" id="8_y3tbr"]
+[ext_resource type="Texture2D" uid="uid://c0im4sjbqo6jm" path="res://mockup/bad-octopus-sushi.png" id="11_203t0"]
 [ext_resource type="Texture2D" uid="uid://bb5ffhmsoc704" path="res://mockup/medkit-placeholder.png" id="12_o6lfd"]
 
 [sub_resource type="Curve2D" id="Curve2D_6u7gi"]
@@ -61,7 +63,7 @@ texture = ExtResource("6_tojgu")
 position = Vector2(1157, 304)
 rotates = false
 script = ExtResource("2_fwvx3")
-sprites = Array[Sprite2D]([null])
+sprites = Array[Texture]([ExtResource("8_y3tbr")])
 
 [node name="Area2D" type="Area2D" parent="PlatePath/ConveyerItem"]
 position = Vector2(-0.779663, -52)
@@ -92,6 +94,7 @@ texture = ExtResource("7_r0ru2")
 position = Vector2(-81, 444)
 rotates = false
 script = ExtResource("2_fwvx3")
+sprites = Array[Texture]([ExtResource("2_7uiju"), ExtResource("11_203t0")])
 
 [node name="Area2D" type="Area2D" parent="SushiPath/ConveyerItem"]
 position = Vector2(-0.779663, -52)
