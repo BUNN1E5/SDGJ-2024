@@ -92,7 +92,7 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_bt5o8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -50, 20, 0, 0, 0, 0, 1970, 20)
+"points": PackedVector2Array(0, 0, 0, 0, -200, 20, 0, 0, 0, 0, 2100, 20)
 }
 point_count = 2
 
@@ -142,7 +142,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
-scale = Vector2(0.833, 0.833)
+scale = Vector2(0.667, 0.667)
 
 [node name="Background" type="Node2D" parent="."]
 
