@@ -1,4 +1,4 @@
-extends Node2D
+extends Path2D
 class_name ConveyerBelt
 #Here is the functionality that needs to be implemented in this class:
 #We need to make a conveyer!
@@ -14,8 +14,11 @@ class_name ConveyerBelt
 #	If good food gets gobbled add some money and push emty plate on plate return at the
 #		at the same relative position as where it was on the 
 
-
 @export_range(0, 1) var speed : float = 0.1
+#var kitchen : Array[ConveyerItem]
+#var hall : Array[ConveyerItem]
+
+var off_screen_time = 10
 
 func _ready():
 	pass

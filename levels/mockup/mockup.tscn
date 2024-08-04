@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://deytuyg26ollq"]
+[gd_scene load_steps=17 format=3 uid="uid://deytuyg26ollq"]
 
-[ext_resource type="Texture2D" uid="uid://bnrybd2q4f5gc" path="res://mockup/background.png" id="1_bh67r"]
+[ext_resource type="Script" path="res://game_systems/window_resize.gd" id="1_wuxd8"]
 [ext_resource type="Texture2D" uid="uid://bt1ylwqcwa43" path="res://mockup/good-octopus-sushi.png" id="2_7uiju"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_belt.gd" id="2_fltsp"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_item.gd" id="2_fwvx3"]
-[ext_resource type="Texture2D" uid="uid://cpecripuq0dbr" path="res://icon.svg" id="5_ygjv5"]
+[ext_resource type="Texture2D" uid="uid://dqgy1mbhf5ngl" path="res://mockup/phone-placeholder.png" id="3_lx381"]
+[ext_resource type="Texture2D" uid="uid://bbgjrmf7jnsak" path="res://mockup/trashcan-placeholder.png" id="4_g7k1x"]
+[ext_resource type="Texture2D" uid="uid://bdaug8bbae75c" path="res://mockup/inspectors-hand-placeholder.png" id="5_cigx3"]
+[ext_resource type="Texture2D" uid="uid://dv1uxl06sdjeq" path="res://mockup/backgraound-placeholder-imeatation.jpg" id="6_1gywg"]
+[ext_resource type="Texture2D" uid="uid://c5h1vluiwt7wl" path="res://mockup/conveyor-belt-back-placeholder.png" id="6_tojgu"]
 [ext_resource type="Script" path="res://game_systems/player_control/mouse.gd" id="6_vpumv"]
+[ext_resource type="Texture2D" uid="uid://ds8ysbdyqs2rm" path="res://mockup/conveyor-belt-front-placeholder.png" id="7_r0ru2"]
+[ext_resource type="Texture2D" uid="uid://bb5ffhmsoc704" path="res://mockup/medkit-placeholder.png" id="12_o6lfd"]
 
 [sub_resource type="Curve2D" id="Curve2D_6u7gi"]
 _data = {
@@ -13,44 +19,89 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qr1ei"]
+
 [sub_resource type="Curve2D" id="Curve2D_hkcda"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -81, 444, 0, 0, 0, 0, 1293, 450, 0, 0, 0, 0, 1300, -100, 0, 0, 0, 0, -80, -100, 0, 0, 0, 0, -80, 450)
+"points": PackedVector2Array(0, 0, 0, 0, -81, 444, 0, 0, 0, 0, 1293, 450)
 }
-point_count = 5
+point_count = 2
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hw12b"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(574, 325)
-texture = ExtResource("1_bh67r")
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wuxd8")
+
+[node name="Backgraound-placeholder-imeatation" type="Sprite2D" parent="."]
+position = Vector2(637, 478)
+scale = Vector2(0.66875, 0.6625)
+texture = ExtResource("6_1gywg")
+
+[node name="Phone-placeholder" type="Sprite2D" parent="."]
+position = Vector2(1141, 189)
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("3_lx381")
+
+[node name="Trashcan-placeholder" type="Sprite2D" parent="."]
+position = Vector2(147, 792)
+scale = Vector2(0.445946, 0.430147)
+texture = ExtResource("4_g7k1x")
 
 [node name="PlatePath" type="Path2D" parent="."]
+position = Vector2(29, 141)
 curve = SubResource("Curve2D_6u7gi")
 script = ExtResource("2_fltsp")
 
+[node name="Conveyor-belt-back-placeholder" type="Sprite2D" parent="PlatePath"]
+position = Vector2(659, 307)
+scale = Vector2(0.815, 0.815)
+texture = ExtResource("6_tojgu")
+
+[node name="ConveyerItem" type="PathFollow2D" parent="PlatePath"]
+position = Vector2(1157, 304)
+rotates = false
+script = ExtResource("2_fwvx3")
+sprites = Array[Sprite2D]([null])
+
+[node name="Area2D" type="Area2D" parent="PlatePath/ConveyerItem"]
+position = Vector2(-0.779663, -52)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatePath/ConveyerItem/Area2D"]
+scale = Vector2(29.325, 29.325)
+shape = SubResource("CircleShape2D_qr1ei")
+
+[node name="Good-octopus-sushi" type="Sprite2D" parent="PlatePath/ConveyerItem"]
+position = Vector2(-0.779663, -52)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7uiju")
+
 [node name="SushiPath" type="Path2D" parent="."]
-position = Vector2(-59.3049, 0)
+position = Vector2(-3, 144)
 scale = Vector2(1.04562, 1)
 curve = SubResource("Curve2D_hkcda")
 script = ExtResource("2_fltsp")
 speed = 0.057
 
-[node name="PathFollow2D" type="PathFollow2D" parent="SushiPath"]
+[node name="Conveyor-belt-front-placeholder" type="Sprite2D" parent="SushiPath"]
+position = Vector2(674.533, 443)
+scale = Vector2(0.760315, 0.795)
+texture = ExtResource("7_r0ru2")
+
+[node name="ConveyerItem" type="PathFollow2D" parent="SushiPath"]
 position = Vector2(-81, 444)
 rotates = false
 script = ExtResource("2_fwvx3")
 
-[node name="Area2D" type="Area2D" parent="SushiPath/PathFollow2D"]
+[node name="Area2D" type="Area2D" parent="SushiPath/ConveyerItem"]
 position = Vector2(-0.779663, -52)
 scale = Vector2(0.2, 0.2)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SushiPath/PathFollow2D/Area2D"]
-position = Vector2(3.89832, 260)
-scale = Vector2(5, 5)
-polygon = PackedVector2Array(-53.5568, 2, 66.946, 1, 51.644, -108, -41.124, -109)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SushiPath/ConveyerItem/Area2D"]
+scale = Vector2(29.325, 29.325)
+shape = SubResource("CircleShape2D_qr1ei")
 
-[node name="Good-octopus-sushi" type="Sprite2D" parent="SushiPath/PathFollow2D"]
+[node name="Good-octopus-sushi" type="Sprite2D" parent="SushiPath/ConveyerItem"]
 position = Vector2(-0.779663, -52)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_7uiju")
@@ -58,6 +109,17 @@ texture = ExtResource("2_7uiju")
 [node name="Mouse" type="Sprite2D" parent="."]
 position = Vector2(66, 409)
 scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("5_ygjv5")
+texture = ExtResource("5_cigx3")
 script = ExtResource("6_vpumv")
 mouse_smoothness = 12
+
+[node name="Area2D" type="Area2D" parent="Mouse"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse/Area2D"]
+scale = Vector2(7.1, 7.1)
+shape = SubResource("CircleShape2D_hw12b")
+
+[node name="Medkit-placeholder" type="Sprite2D" parent="."]
+position = Vector2(198, 197)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("12_o6lfd")
