@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coaqfhq6htoo4"
-path="res://.godot/imported/dragonroll-placeholder.png-6db4b321d6b699a3bcb7276fb139b0fd.ctex"
+path="res://.godot/imported/dragonroll-placeholder.png-d0b4abd517bf3d3a78c420eec57604e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://food/dragonroll-placeholder.png"
-dest_files=["res://.godot/imported/dragonroll-placeholder.png-6db4b321d6b699a3bcb7276fb139b0fd.ctex"]
+source_file="res://food/dragon-roll/dragonroll-placeholder.png"
+dest_files=["res://.godot/imported/dragonroll-placeholder.png-d0b4abd517bf3d3a78c420eec57604e2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ekrvduf7xs0w"
-path="res://.godot/imported/bad-gunkan-sushi-placeholder.png-774a1c5f8709472b1d49395c5d4d8db2.ctex"
+uid="uid://byo8jkq7uqhf7"
+path="res://.godot/imported/bad-octopus-sushi-final.png-663dc808fecfbd1c3af6517987a564a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://food/bad-gunkan-sushi-placeholder.png"
-dest_files=["res://.godot/imported/bad-gunkan-sushi-placeholder.png-774a1c5f8709472b1d49395c5d4d8db2.ctex"]
+source_file="res://food/octopus/bad-octopus-sushi-final.png"
+dest_files=["res://.godot/imported/bad-octopus-sushi-final.png-663dc808fecfbd1c3af6517987a564a4.ctex"]
 
 [params]
 

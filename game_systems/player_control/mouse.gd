@@ -3,23 +3,34 @@ class_name PlayerMouse
 
 @export var toggle_or_hold = false
 
-@export var selector_area : Area2D #assume the child of mouse is an Area2D
+@onready var selector_area : Area2D = get_child(0) #assume the child of mouse is an Area2D
 
 @export var mouse_smoothness = 16
 @export_range(0, 1) var mouse_pickup_modifier = 0.1
 @export var use_modifier = false
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	selector_area = get_child(0)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
 	pass # Replace with function body.
 
+
+var held_item
+signal try_pickup(item : Node2D)
+func on_try_pickup(item):
+	if(item != null):
+		pass
+	item.reparent(self)
+	held_item = item
+
 func _input(event):
 	#mouse click and unclick
 	if event is InputEventMouseButton:
+
 		if toggle_or_hold:
 			#toggle on click
 			if(event.pressed):
@@ -27,6 +38,9 @@ func _input(event):
 		else:
 			use_modifier = event.pressed #This is for holding
 		
+		if use_modifier == false:
+			if(held_item != null):
+				held_item.reparent(get_node("/root/Main"))
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

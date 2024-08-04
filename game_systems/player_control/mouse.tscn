@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2foru1qm1x4k"]
+
+[ext_resource type="Texture2D" uid="uid://bdaug8bbae75c" path="res://levels/mockup/inspectors-hand-placeholder.png" id="1_xh4mv"]
+[ext_resource type="Script" path="res://game_systems/player_control/mouse.gd" id="2_g4la2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hw12b"]
+
+[node name="Mouse" type="Sprite2D"]
+top_level = true
+position = Vector2(66, 409)
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("1_xh4mv")
+script = ExtResource("2_g4la2")
+mouse_smoothness = 12
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(7.1, 7.1)
+shape = SubResource("CircleShape2D_hw12b")

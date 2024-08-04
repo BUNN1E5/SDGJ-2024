@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3tk4up77t3ha"
-path="res://.godot/imported/good-fish-sushi-placeholder.png-8f3aa1f5570beacfdcb7336f1c7bc4d2.ctex"
+uid="uid://bunvhxhncfq4q"
+path="res://.godot/imported/good-gunkan-sushi-placeholder.png-4a1af674d2a52c7836034b7392607fb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://food/good-fish-sushi-placeholder.png"
-dest_files=["res://.godot/imported/good-fish-sushi-placeholder.png-8f3aa1f5570beacfdcb7336f1c7bc4d2.ctex"]
+source_file="res://food/placeholder_gunkan/good-gunkan-sushi-placeholder.png"
+dest_files=["res://.godot/imported/good-gunkan-sushi-placeholder.png-4a1af674d2a52c7836034b7392607fb2.ctex"]
 
 [params]
 

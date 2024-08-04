@@ -1,0 +1,6 @@
+[gd_resource type="AnimatedTexture" load_steps=2 format=3 uid="uid://ccqhqgcoebxdh"]
+
+[ext_resource type="Texture2D" uid="uid://ldsgjrjngntb" path="res://levels/mockup/plate-placeholder.png" id="1_bk742"]
+
+[resource]
+frame_0/texture = ExtResource("1_bk742")

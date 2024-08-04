@@ -1,0 +1,12 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://ck3wbqhjt76y1"]
+
+[ext_resource type="Texture2D" uid="uid://di0me30ngrrw7" path="res://food/octopus/good-octopus-sushi-final.png" id="1_tm2ia"]
+[ext_resource type="Texture2D" uid="uid://byo8jkq7uqhf7" path="res://food/octopus/bad-octopus-sushi-final.png" id="2_g3nly"]
+
+[resource]
+frames = 2
+pause = true
+frame_0/texture = ExtResource("1_tm2ia")
+frame_0/duration = 0.0
+frame_1/texture = ExtResource("2_g3nly")
+frame_1/duration = 0.0

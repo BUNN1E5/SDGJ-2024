@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://c07lmk3573bmv"]
+
+[ext_resource type="Texture2D" uid="uid://c64gewic8l2es" path="res://food/dragon-roll/sushi_dragonroll.png" id="1_7ucys"]
+[ext_resource type="Texture2D" uid="uid://cowfc5vhw6r5u" path="res://food/dragon-roll/sushi_dragonroll_bad.png" id="2_bq1i6"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_7ucys")
+frame_1/texture = ExtResource("2_bq1i6")
+frame_1/duration = 1.0

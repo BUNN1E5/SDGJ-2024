@@ -1,8 +1,14 @@
-extends Node
+extends Node2D
 class_name ConveyerManager
 
 @export var food_belt : ConveyerBelt
 @export var plate_belt : ConveyerBelt
+
+@export var food_items : Array[AnimatedTexture]
+@export var base_item : PackedScene
+
+@export var new_food_cooldown = 1
+var new_food_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,9 +16,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	new_food_timer -= delta
+	if(new_food_timer <= 0):
+		var item = base_item.instantiate()
+		item.sprites = food_items.pick_random()
+		add_food_item(item)
+		new_food_timer = new_food_cooldown
 	pass
 	
-func add_item(item : ConveyerItem):
+func add_food_item(item : ConveyerItem):
 	pass
 
 func eat_Item(item : ConveyerItem):

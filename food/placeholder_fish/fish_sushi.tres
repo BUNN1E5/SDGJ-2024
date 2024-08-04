@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://c58uuyca8t0i5"]
+
+[ext_resource type="Texture2D" uid="uid://d3tk4up77t3ha" path="res://food/placeholder_fish/good-fish-sushi-placeholder.png" id="1_gtedk"]
+[ext_resource type="Texture2D" uid="uid://bop7oa6ylwo0t" path="res://food/placeholder_fish/bad-fish-sushi-placeholder.png" id="2_4h6bt"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_gtedk")
+frame_1/texture = ExtResource("2_4h6bt")
+frame_1/duration = 1.0

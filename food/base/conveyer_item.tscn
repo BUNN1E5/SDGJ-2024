@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://t1gvfey4vvj1"]
+
+[ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_item.gd" id="1_0tk5v"]
+[ext_resource type="Texture2D" uid="uid://ldsgjrjngntb" path="res://levels/mockup/plate-placeholder.png" id="2_asydr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qr1ei"]
+
+[node name="ConveyerItem" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_0tk5v")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(29.325, 29.325)
+shape = SubResource("CircleShape2D_qr1ei")
+
+[node name="Plate-placeholder" type="Sprite2D" parent="."]
+position = Vector2(-1, 29)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_asydr")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -40)

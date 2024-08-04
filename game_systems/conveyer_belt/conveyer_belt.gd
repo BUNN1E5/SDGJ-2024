@@ -18,7 +18,15 @@ class_name ConveyerBelt
 #var kitchen : Array[ConveyerItem]
 #var hall : Array[ConveyerItem]
 
-var off_screen_time = 10
+@export var hall_time = 20
+@export var max_items = 200
+var num_items = 0
+
+func add_item(item : ConveyerItem):
+	item.reparent(self)
+	item.progress_ratio = 0
+	item.conveyer_belt = self
+	pass
 
 func _ready():
 	pass
