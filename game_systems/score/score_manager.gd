@@ -1,11 +1,15 @@
 extends Node
+class_name ScoreManager
 
 #food rating is S -> A -> B -> C -> F with F being a failed state
 #				4 -> 3 -> 2 -> 1 -> 0
 #there is a counter that increases food rating back up
 #when that counter reaches a value increase the food rating up
-@export var food_rating : float = 4
+@export var food_rating : float = 3
 @export var food_rating_recovery_rate : float = 0.1
+@export var food_rating_textures : AnimatedTexture
+
+
 
 #This is your money, this does nothing
 @export var money = 0
@@ -22,6 +26,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func get_food_rating_texture():
+	return food_rating_textures.get_frame_texture(
+		min(floor(food_rating), food_rating_textures.get_frames()))
 
 #this runs when there is a change to the food rating
 #a positive change just adds, a negative change means we lose

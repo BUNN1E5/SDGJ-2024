@@ -23,7 +23,7 @@ class_name ConveyerBelt
 var num_items = 0
 
 func add_item(item : ConveyerItem):
-	item.reparent(self)
+	add_child(item)#item.reparent(self)
 	item.progress_ratio = 0
 	item.conveyer_belt = self
 	pass

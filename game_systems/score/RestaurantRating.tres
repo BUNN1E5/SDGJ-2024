@@ -1,0 +1,18 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://b7tjnxir2fdh5"]
+
+[ext_resource type="Texture2D" uid="uid://dauc1b6g1ayve" path="res://levels/mockup/restaurant-c-rating-placeholder.png" id="1_0uvbs"]
+[ext_resource type="Texture2D" uid="uid://c3c75dssg3wy0" path="res://levels/mockup/restaurant-a-rating-placeholder.png" id="1_cf7ue"]
+[ext_resource type="Texture2D" uid="uid://c1olwg1ag3eas" path="res://levels/mockup/restaurant-b-rating-placeholder.png" id="2_jonhy"]
+[ext_resource type="Texture2D" uid="uid://cnko8we0hw2p7" path="res://levels/mockup/restaurant-s-rating-placeholder.png" id="3_gh4cs"]
+
+[resource]
+frames = 5
+frame_0/texture = ExtResource("1_0uvbs")
+frame_1/texture = ExtResource("1_0uvbs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("2_jonhy")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("1_cf7ue")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("3_gh4cs")
+frame_4/duration = 1.0

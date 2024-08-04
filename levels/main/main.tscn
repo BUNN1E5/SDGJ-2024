@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cskk4hahslcst"]
+[gd_scene load_steps=34 format=3 uid="uid://cskk4hahslcst"]
 
 [ext_resource type="Texture2D" uid="uid://b6kgin4m6kebf" path="res://levels/main/kitchenBG.png" id="1_prlbg"]
 [ext_resource type="Texture2D" uid="uid://c7ywsgv4shweu" path="res://levels/main/sink.png" id="2_choa1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3c75dssg3wy0" path="res://levels/mockup/restaurant-a-rating-placeholder.png" id="4_deqqf"]
 [ext_resource type="Texture2D" uid="uid://bdaug8bbae75c" path="res://levels/mockup/inspectors-hand-placeholder.png" id="5_arrqc"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_belt.gd" id="5_chxk5"]
+[ext_resource type="Script" path="res://game_systems/score/RestaurantRatingSprite.gd" id="5_ticuk"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_manager.gd" id="7_x67wk"]
 [ext_resource type="Texture2D" uid="uid://b15qwiof4abjo" path="res://food/fish-the-cat/FISHtheCATidle1.png" id="8_d8xw1"]
 [ext_resource type="Script" path="res://levels/main/FISHtheCAT.gd" id="8_t1fv6"]
@@ -24,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://2foru1qm1x4k" path="res://game_systems/player_control/mouse.tscn" id="12_nwkvh"]
 [ext_resource type="Texture2D" uid="uid://6yvm4dnmlx57" path="res://food/fish-the-cat/FISHtheCATwalk1.png" id="13_8rsdy"]
 [ext_resource type="Texture2D" uid="uid://dx8bkilob0pf5" path="res://food/fish-the-cat/FISHtheCATwalk2.png" id="14_ux25m"]
+[ext_resource type="Texture2D" uid="uid://b7tjnxir2fdh5" path="res://game_systems/score/RestaurantRating.tres" id="24_i8e2i"]
 
 [sub_resource type="Animation" id="Animation_dx3wb"]
 resource_name = "Ratings"
@@ -31,30 +33,60 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../RestaurantRatingSprite:position")
+tracks/0/path = NodePath("RestaurantRatingSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1670, 180), Vector2(1670, 180), Vector2(2100, 180), Vector2(1670, 180), Vector2(1670, 180)]
+"values": [Vector2(0, 0), Vector2(500, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Inspectors-hand-placeholder:position")
+tracks/1/path = NodePath("Inspectors-hand-placeholder:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2100, 180), Vector2(1700, 180), Vector2(2100, 180), Vector2(1700, 180), Vector2(2100, 180)]
+"values": [Vector2(500, 0), Vector2(0, 0), Vector2(500, 0), Vector2(0, 0), Vector2(500, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RestaurantRatingSprite")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_change_food_letter"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6damg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inspectors-hand-placeholder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwjdl"]
 _data = {
+"RESET": SubResource("Animation_6damg"),
 "Ratings": SubResource("Animation_dx3wb")
 }
 
@@ -128,20 +160,24 @@ texture = ExtResource("3_0hvof")
 centered = false
 
 [node name="RestaurantRating" type="Node2D" parent="Background"]
+position = Vector2(1719.09, 296.519)
+scale = Vector2(1.20048, 1.20048)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/RestaurantRating"]
+[node name="RestaurantRating" type="AnimationPlayer" parent="Background/RestaurantRating"]
 libraries = {
 "": SubResource("AnimationLibrary_gwjdl")
 }
 autoplay = "Ratings"
 
-[node name="RestaurantRatingSprite" type="Sprite2D" parent="Background/RestaurantRating"]
-position = Vector2(2100, 180)
-scale = Vector2(0.585, 0.585)
+[node name="RestaurantRatingSprite" type="Sprite2D" parent="Background/RestaurantRating" node_paths=PackedStringArray("manager")]
+position = Vector2(500, 0)
+scale = Vector2(0.487305, 0.487305)
 texture = ExtResource("4_deqqf")
+script = ExtResource("5_ticuk")
+manager = NodePath("../../../GameManagement")
 
 [node name="Inspectors-hand-placeholder" type="Sprite2D" parent="Background/RestaurantRating"]
-position = Vector2(2100, 180)
+scale = Vector2(0.833, 0.833)
 texture = ExtResource("5_arrqc")
 
 [node name="Interactables" type="Node2D" parent="."]
@@ -178,18 +214,13 @@ position = Vector2(957.025, 74.525)
 scale = Vector2(13.195, 13.195)
 shape = SubResource("RectangleShape2D_hefmn")
 
-[node name="ConveyerItem" parent="Interactables/Conveyor-front/FoodConveyer" node_paths=PackedStringArray("conveyer_belt") instance=ExtResource("9_ladiw")]
-position = Vector2(-50, 20)
-conveyer_belt = NodePath("..")
-sprites = ExtResource("8_w2f6g")
-
 [node name="ConveyerManager" type="Node2D" parent="Interactables" node_paths=PackedStringArray("food_belt", "plate_belt")]
 script = ExtResource("7_x67wk")
 food_belt = NodePath("../Conveyor-front/FoodConveyer")
 plate_belt = NodePath("../Conveyor-rear/PlateConveyer")
 food_items = Array[AnimatedTexture]([ExtResource("8_w2f6g"), ExtResource("10_5g7h0"), ExtResource("11_br4we"), ExtResource("12_ba5nl")])
 base_item = ExtResource("9_ladiw")
-new_food_cooldown = 5
+new_food_cooldown = 1.5
 
 [node name="FISHtheCAT" type="Node2D" parent="."]
 position = Vector2(1321, 410)
@@ -202,5 +233,6 @@ frame_progress = 0.811924
 
 [node name="GameManagement" type="Node2D" parent="."]
 script = ExtResource("11_lc0uk")
+food_rating_textures = ExtResource("24_i8e2i")
 
 [node name="Mouse" parent="." instance=ExtResource("12_nwkvh")]
