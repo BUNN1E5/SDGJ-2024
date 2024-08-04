@@ -41,11 +41,6 @@ position = Vector2(-81, 444)
 rotates = false
 script = ExtResource("2_fwvx3")
 
-[node name="Good-octopus-sushi" type="Sprite2D" parent="SushiPath/PathFollow2D"]
-position = Vector2(-0.779663, -52)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_7uiju")
-
 [node name="Area2D" type="Area2D" parent="SushiPath/PathFollow2D"]
 position = Vector2(-0.779663, -52)
 scale = Vector2(0.2, 0.2)
@@ -55,8 +50,14 @@ position = Vector2(3.89832, 260)
 scale = Vector2(5, 5)
 polygon = PackedVector2Array(-53.5568, 2, 66.946, 1, 51.644, -108, -41.124, -109)
 
+[node name="Good-octopus-sushi" type="Sprite2D" parent="SushiPath/PathFollow2D"]
+position = Vector2(-0.779663, -52)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7uiju")
+
 [node name="Mouse" type="Sprite2D" parent="."]
 position = Vector2(66, 409)
 scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("5_ygjv5")
 script = ExtResource("6_vpumv")
+mouse_smoothness = 12
