@@ -37,6 +37,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if self.collision.overlaps_area(mouse.selector_area):
+			print("running")
 			mouse.try_pickup.emit(self)
 		pass
 	
