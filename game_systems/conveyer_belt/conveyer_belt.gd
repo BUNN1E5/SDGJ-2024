@@ -23,12 +23,12 @@ class_name ConveyerBelt
 var num_items = 0
 
 @export var belt_push_cooldown = 1.0
-var belt_push_timer = belt_push_cooldown
+@export var belt_push_timer = belt_push_cooldown
 
-var belt_q : Array[ConveyerItem]
+@export var belt_q : Array[ConveyerItem]
 
 func add_item(item : ConveyerItem):
-	add_child(item)#item.reparent(self)
+	add_child(item) #item.reparent(self)
 	item.conveyer_belt = self
 	try_push_to_start(item)
 	pass

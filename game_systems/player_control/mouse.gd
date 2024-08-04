@@ -13,15 +13,17 @@ class_name PlayerMouse
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	try_pickup.connect(on_try_pickup)
 	
 	pass # Replace with function body.
 
 
 var held_item
-signal try_pickup(item : Node2D)
+signal try_pickup(item)
 func on_try_pickup(item):
+	print(item)
 	if(item != null):
 		pass
 	item.reparent(self)

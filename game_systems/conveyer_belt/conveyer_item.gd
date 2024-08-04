@@ -9,6 +9,11 @@ var chance_to_be_consumed = 0.25
 
 var mousePath = "/root/Main/Mouse"
 @onready var mouse : PlayerMouse = get_node(mousePath)
+
+
+var scoreManagerPath = "/root/Main/GameManagement"
+@onready var scoreManager : ScoreManager = get_node(scoreManagerPath)
+
 #food and a plate are both conveyerItems
 
 #these are the sprites from good to "bad"
@@ -31,26 +36,34 @@ func _ready():
 	self.loop = false
 	self.rotates = false
 	if(sprites.get_frames() > 0):
-		print(sprites.get_frames())
-		print(min(bad_level, sprites.get_frames()))
 		self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()))
 	pass # Replace with function body.
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		if self.collision.overlaps_area(mouse.selector_area):
-			print("picking up")
-			mouse.try_pickup.emit(self)
-		pass
+		if(event.pressed):
+			if self.collision.overlaps_area(mouse.selector_area):
+				mouse.try_pickup.emit(self)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var rng = RandomNumberGenerator.new()
+@export var try_get_eaten_cooldown = 1
+var try_get_eaten_timer = try_get_eaten_cooldown
 func _process(delta):
 	if not on_belt:
 		return
 		
 	if in_hall:
 		time_in_hall -= delta
+		try_get_eaten_timer -= delta
+		
+		#try and get eaten
+		#if we get eaten
+		if(try_get_eaten_timer <= 0):
+			try_get_eaten_timer = try_get_eaten_cooldown
+			if(rng.randf() > chance_to_be_consumed):
+				scoreManager.food_rating_recovery.emit()
 		
 		if(time_in_hall <= 0):
 			#we are ready to come back into the conveyer
@@ -58,10 +71,14 @@ func _process(delta):
 			bad_level = min(bad_level+1, sprites.get_frames())
 			self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()))
 			in_hall = false
+			on_belt = false
 		pass
 	else:
 		if(self.progress_ratio >= 1):
 			in_hall = true
 			time_in_hall = conveyer_belt.hall_time
+			if(bad_level > 0): #thiis is bad way
+				#remove from belt
+				scoreManager.food_rating_loss.emit()
 		self.progress_ratio += delta * conveyer_belt.speed
 	pass

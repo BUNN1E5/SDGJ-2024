@@ -13,6 +13,7 @@ texture = ExtResource("1_xh4mv")
 script = ExtResource("2_g4la2")
 toggle_or_hold = true
 mouse_smoothness = 12
+mouse_pickup_modifier = 0.8
 
 [node name="Area2D" type="Area2D" parent="."]
 
