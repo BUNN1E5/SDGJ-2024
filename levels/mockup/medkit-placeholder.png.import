@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt1ylwqcwa43"
-path="res://.godot/imported/good-octopus-sushi.png-62b36d067f8ccd6d0d694e26b1e90954.ctex"
+uid="uid://bb5ffhmsoc704"
+path="res://.godot/imported/medkit-placeholder.png-7bf1cddf3dbde2b97d6ba6f096e162e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/good-octopus-sushi.png"
-dest_files=["res://.godot/imported/good-octopus-sushi.png-62b36d067f8ccd6d0d694e26b1e90954.ctex"]
+source_file="res://levels/mockup/medkit-placeholder.png"
+dest_files=["res://.godot/imported/medkit-placeholder.png-7bf1cddf3dbde2b97d6ba6f096e162e8.ctex"]
 
 [params]
 

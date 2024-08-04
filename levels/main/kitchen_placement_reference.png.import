@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb5ffhmsoc704"
-path="res://.godot/imported/medkit-placeholder.png-d9dafa677241e5737c011f0b535a5a17.ctex"
+uid="uid://cb2vqk4iy8c6f"
+path="res://.godot/imported/kitchen_placement_reference.png-bef8d937958b91442091d432b1f3c9f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/medkit-placeholder.png"
-dest_files=["res://.godot/imported/medkit-placeholder.png-d9dafa677241e5737c011f0b535a5a17.ctex"]
+source_file="res://levels/main/kitchen_placement_reference.png"
+dest_files=["res://.godot/imported/kitchen_placement_reference.png-bef8d937958b91442091d432b1f3c9f6.ctex"]
 
 [params]
 

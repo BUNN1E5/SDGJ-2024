@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dauc1b6g1ayve"
-path="res://.godot/imported/restaurant-c-rating-placeholder.png-66d522d97f12cdea60277af97301505a.ctex"
+uid="uid://b6kgin4m6kebf"
+path="res://.godot/imported/kitchenBG.png-131ed0b6caf71465e65df453d56f633b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/restaurant-c-rating-placeholder.png"
-dest_files=["res://.godot/imported/restaurant-c-rating-placeholder.png-66d522d97f12cdea60277af97301505a.ctex"]
+source_file="res://levels/main/kitchenBG.png"
+dest_files=["res://.godot/imported/kitchenBG.png-131ed0b6caf71465e65df453d56f633b.ctex"]
 
 [params]
 

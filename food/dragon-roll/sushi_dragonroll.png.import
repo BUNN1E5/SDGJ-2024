@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0im4sjbqo6jm"
-path="res://.godot/imported/bad-octopus-sushi.png-b90d71602ef2f471f4c3efaf3758811b.ctex"
+uid="uid://c64gewic8l2es"
+path="res://.godot/imported/sushi_dragonroll.png-8016813223e564707b7cfbf869cb9f25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/bad-octopus-sushi.png"
-dest_files=["res://.godot/imported/bad-octopus-sushi.png-b90d71602ef2f471f4c3efaf3758811b.ctex"]
+source_file="res://food/dragon-roll/sushi_dragonroll.png"
+dest_files=["res://.godot/imported/sushi_dragonroll.png-8016813223e564707b7cfbf869cb9f25.ctex"]
 
 [params]
 

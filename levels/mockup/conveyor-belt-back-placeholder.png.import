@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds8ysbdyqs2rm"
-path="res://.godot/imported/conveyor-belt-front-placeholder.png-720c556a281f968cade635142b55d93f.ctex"
+uid="uid://c5h1vluiwt7wl"
+path="res://.godot/imported/conveyor-belt-back-placeholder.png-27702c65b00be9cdc6325a1d84a501a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/conveyor-belt-front-placeholder.png"
-dest_files=["res://.godot/imported/conveyor-belt-front-placeholder.png-720c556a281f968cade635142b55d93f.ctex"]
+source_file="res://levels/mockup/conveyor-belt-back-placeholder.png"
+dest_files=["res://.godot/imported/conveyor-belt-back-placeholder.png-27702c65b00be9cdc6325a1d84a501a0.ctex"]
 
 [params]
 

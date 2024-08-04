@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1uxl06sdjeq"
-path="res://.godot/imported/backgraound-placeholder-imeatation.jpg-6140b0f178e073539af317da9f08828d.ctex"
+uid="uid://c1olwg1ag3eas"
+path="res://.godot/imported/restaurant-b-rating-placeholder.png-6b7f736a553fce68642eff3c8c6f1522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/backgraound-placeholder-imeatation.jpg"
-dest_files=["res://.godot/imported/backgraound-placeholder-imeatation.jpg-6140b0f178e073539af317da9f08828d.ctex"]
+source_file="res://levels/mockup/restaurant-b-rating-placeholder.png"
+dest_files=["res://.godot/imported/restaurant-b-rating-placeholder.png-6b7f736a553fce68642eff3c8c6f1522.ctex"]
 
 [params]
 

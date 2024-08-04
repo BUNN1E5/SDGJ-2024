@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5h1vluiwt7wl"
-path="res://.godot/imported/conveyor-belt-back-placeholder.png-b0fb08e0ab42e5432479ea69ad0468d9.ctex"
+uid="uid://cnko8we0hw2p7"
+path="res://.godot/imported/restaurant-s-rating-placeholder.png-f8d86a9f02c40a1184c4cdceb70521c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/conveyor-belt-back-placeholder.png"
-dest_files=["res://.godot/imported/conveyor-belt-back-placeholder.png-b0fb08e0ab42e5432479ea69ad0468d9.ctex"]
+source_file="res://levels/mockup/restaurant-s-rating-placeholder.png"
+dest_files=["res://.godot/imported/restaurant-s-rating-placeholder.png-f8d86a9f02c40a1184c4cdceb70521c9.ctex"]
 
 [params]
 

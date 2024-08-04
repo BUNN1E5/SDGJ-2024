@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4c72vj0wdc34"
-path="res://.godot/imported/cat-neutral-placeholder.png-a56c137f61a61b0bc19076d018673f74.ctex"
+uid="uid://cowfc5vhw6r5u"
+path="res://.godot/imported/sushi_dragonroll_bad.png-e1c4f569ddcaaa83a8509a5c2d3743dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockup/cat-neutral-placeholder.png"
-dest_files=["res://.godot/imported/cat-neutral-placeholder.png-a56c137f61a61b0bc19076d018673f74.ctex"]
+source_file="res://food/dragon-roll/sushi_dragonroll_bad.png"
+dest_files=["res://.godot/imported/sushi_dragonroll_bad.png-e1c4f569ddcaaa83a8509a5c2d3743dd.ctex"]
 
 [params]
 
