@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0im4sjbqo6jm"
-path="res://.godot/imported/bad-octopus-sushi.png-04497acaa2499bee92cf985e0d30449a.ctex"
+path="res://.godot/imported/bad-octopus-sushi.png-b90d71602ef2f471f4c3efaf3758811b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://brainstorming/bad-octopus-sushi.png"
-dest_files=["res://.godot/imported/bad-octopus-sushi.png-04497acaa2499bee92cf985e0d30449a.ctex"]
+source_file="res://mockup/bad-octopus-sushi.png"
+dest_files=["res://.godot/imported/bad-octopus-sushi.png-b90d71602ef2f471f4c3efaf3758811b.ctex"]
 
 [params]
 

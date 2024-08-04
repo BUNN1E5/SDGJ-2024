@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://deytuyg26ollq"]
+[gd_scene load_steps=9 format=3 uid="uid://deytuyg26ollq"]
 
 [ext_resource type="Texture2D" uid="uid://bnrybd2q4f5gc" path="res://mockup/background.png" id="1_bh67r"]
+[ext_resource type="Texture2D" uid="uid://bt1ylwqcwa43" path="res://mockup/good-octopus-sushi.png" id="2_7uiju"]
+[ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_belt.gd" id="2_fltsp"]
+[ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_item.gd" id="2_fwvx3"]
+[ext_resource type="Texture2D" uid="uid://cpecripuq0dbr" path="res://icon.svg" id="5_ygjv5"]
+[ext_resource type="Script" path="res://game_systems/player_control/mouse.gd" id="6_vpumv"]
 
 [sub_resource type="Curve2D" id="Curve2D_6u7gi"]
 _data = {
@@ -10,9 +15,9 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_hkcda"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4, 453, 0, 0, 0, 0, 1162, 453)
+"points": PackedVector2Array(0, 0, 0, 0, -81, 444, 0, 0, 0, 0, 1293, 450, 0, 0, 0, 0, 1300, -100, 0, 0, 0, 0, -80, -100, 0, 0, 0, 0, -80, 450)
 }
-point_count = 2
+point_count = 5
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,6 +27,36 @@ texture = ExtResource("1_bh67r")
 
 [node name="PlatePath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_6u7gi")
+script = ExtResource("2_fltsp")
 
 [node name="SushiPath" type="Path2D" parent="."]
+position = Vector2(-59.3049, 0)
+scale = Vector2(1.04562, 1)
 curve = SubResource("Curve2D_hkcda")
+script = ExtResource("2_fltsp")
+speed = 0.057
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SushiPath"]
+position = Vector2(-81, 444)
+rotates = false
+script = ExtResource("2_fwvx3")
+
+[node name="Good-octopus-sushi" type="Sprite2D" parent="SushiPath/PathFollow2D"]
+position = Vector2(-0.779663, -52)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7uiju")
+
+[node name="Area2D" type="Area2D" parent="SushiPath/PathFollow2D"]
+position = Vector2(-0.779663, -52)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SushiPath/PathFollow2D/Area2D"]
+position = Vector2(3.89832, 260)
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(-53.5568, 2, 66.946, 1, 51.644, -108, -41.124, -109)
+
+[node name="Mouse" type="Sprite2D" parent="."]
+position = Vector2(66, 409)
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("5_ygjv5")
+script = ExtResource("6_vpumv")

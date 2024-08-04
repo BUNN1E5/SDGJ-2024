@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name ConveyerBelt
 #Here is the functionality that needs to be implemented in this class:
 #We need to make a conveyer!
 #	How do we wanna implement this?
@@ -14,12 +14,11 @@ extends Node2D
 #	If good food gets gobbled add some money and push emty plate on plate return at the
 #		at the same relative position as where it was on the 
 
-#We will figure out which we wanna use later
-@export var sushi_path : Path2D 
-@export var plate_path : Path2D
 
-@export var food_conveyer : Array[Node2D] #Holds all the food on the conveyer to the customer
-@export var plate_conveyer : Array[Node2D] #Holds any plates that are returned including "BAD" food
+@export_range(0, 1) var speed : float = 0.1
 
-func process(delta):
+func _ready():
+	pass
+
+func _process(delta):
 	pass
