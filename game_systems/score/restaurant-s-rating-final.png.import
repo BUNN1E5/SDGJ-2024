@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dcklncghky7a1"
+=======
+uid="uid://bgpojfel7lfp8"
+>>>>>>> fcc9e39 (Things maybe open)
 path="res://.godot/imported/restaurant-s-rating-final.png-02f534248383dec01c8309a7a5a06ae4.ctex"
 metadata={
 "vram_texture": false

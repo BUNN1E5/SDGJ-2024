@@ -5,6 +5,7 @@ class_name ConveyerItem
 var collision : Area2D
 var being_held = false
 var bad_level = 0
+var chance_to_be_consumed = 0.25
 
 var mousePath = "/root/Main/Mouse"
 @onready var mouse : PlayerMouse = get_node(mousePath)
