@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dnedvb8jcpi3s"
+=======
+uid="uid://bg5pdt7bsejnf"
+>>>>>>> 048af62 (asdasd)
 path="res://.godot/imported/FISHtheCAT_ded1.png-28691b7d14e375367978dc5ca84b4180.ctex"
 metadata={
 "vram_texture": false
