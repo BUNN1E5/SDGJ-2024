@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://bxwybqx3xkm71"]
+
+[ext_resource type="Texture2D" uid="uid://lwnocd3xcrqq" path="res://food/shinko/sushi_shinko.png" id="1_buuw1"]
+[ext_resource type="Texture2D" uid="uid://c6bkylemkva6w" path="res://food/shinko/sushi_shinko_sad.png" id="2_6w8f6"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_buuw1")
+frame_1/texture = ExtResource("2_6w8f6")
+frame_1/duration = 1.0

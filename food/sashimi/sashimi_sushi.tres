@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://xfstm0amqtde"]
+
+[ext_resource type="Texture2D" uid="uid://dp71uu21iooes" path="res://food/sashimi/sushi_sashimi.png" id="1_5y7nn"]
+[ext_resource type="Texture2D" uid="uid://dkpndn8qxftyn" path="res://food/sashimi/sushi_sashimi_bad.png" id="2_42qcv"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_5y7nn")
+frame_1/texture = ExtResource("2_42qcv")
+frame_1/duration = 1.0

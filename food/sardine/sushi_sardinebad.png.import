@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvog32wb648aw"
-path="res://.godot/imported/good-tobiko-sushi-final.png-d7b41a898be602c262aa71c082970862.ctex"
+uid="uid://de0a4k61m7i2"
+path="res://.godot/imported/sushi_sardinebad.png-fdbf2b46643f7dbe014f6064248c0673.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://food/final_gunkan/good-tobiko-sushi-final.png"
-dest_files=["res://.godot/imported/good-tobiko-sushi-final.png-d7b41a898be602c262aa71c082970862.ctex"]
+source_file="res://food/sardine/sushi_sardinebad.png"
+dest_files=["res://.godot/imported/sushi_sardinebad.png-fdbf2b46643f7dbe014f6064248c0673.ctex"]
 
 [params]
 

@@ -18,6 +18,8 @@ var mousePath = "/root/Main/Mouse"
 var time_in_hall = 0
 var in_hall = false
 
+var on_belt : bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,21 +39,22 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if self.collision.overlaps_area(mouse.selector_area):
-			print("running")
+			print("picking up")
 			mouse.try_pickup.emit(self)
 		pass
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
-	
+	if not on_belt:
+		return
+		
 	if in_hall:
 		time_in_hall -= delta
 		
 		if(time_in_hall <= 0):
 			#we are ready to come back into the conveyer
-			self.progress_ratio = 0
+			conveyer_belt.try_push_to_start(self)
 			bad_level = min(bad_level+1, sprites.get_frames())
 			self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()))
 			in_hall = false

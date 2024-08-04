@@ -19,9 +19,7 @@ func _process(delta):
 	new_food_timer -= delta
 	if(new_food_timer <= 0):
 		var item = base_item.instantiate() as ConveyerItem
-		print("spawning " + str(item))
 		item.sprites = food_items.pick_random()
-		print("picked " + str(item.sprites))
 		add_food_item(item)
 		new_food_timer = new_food_cooldown
 	pass

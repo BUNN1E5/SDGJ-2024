@@ -1,31 +1,33 @@
-[gd_scene load_steps=34 format=3 uid="uid://cskk4hahslcst"]
+[gd_scene load_steps=36 format=3 uid="uid://cskk4hahslcst"]
 
 [ext_resource type="Texture2D" uid="uid://b6kgin4m6kebf" path="res://levels/main/kitchenBG.png" id="1_prlbg"]
 [ext_resource type="Texture2D" uid="uid://c7ywsgv4shweu" path="res://levels/main/sink.png" id="2_choa1"]
 [ext_resource type="Texture2D" uid="uid://cb2vqk4iy8c6f" path="res://levels/main/kitchen_placement_reference.png" id="3_0hvof"]
 [ext_resource type="Texture2D" uid="uid://ri8be2lp5p50" path="res://levels/main/conveyor-front.png" id="4_4xd73"]
 [ext_resource type="Texture2D" uid="uid://fj1syijsinww" path="res://levels/main/conveyor-rear.png" id="4_7ym7d"]
-[ext_resource type="Texture2D" uid="uid://c3c75dssg3wy0" path="res://levels/mockup/restaurant-a-rating-placeholder.png" id="4_deqqf"]
-[ext_resource type="Texture2D" uid="uid://bdaug8bbae75c" path="res://levels/mockup/inspectors-hand-placeholder.png" id="5_arrqc"]
+[ext_resource type="Texture2D" uid="uid://1hjmk4kcbewa" path="res://levels/main/inspectors-hand-final.png" id="4_v7nlk"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_belt.gd" id="5_chxk5"]
 [ext_resource type="Script" path="res://game_systems/score/RestaurantRatingSprite.gd" id="5_ticuk"]
 [ext_resource type="Script" path="res://game_systems/conveyer_belt/conveyer_manager.gd" id="7_x67wk"]
 [ext_resource type="Texture2D" uid="uid://b15qwiof4abjo" path="res://food/fish-the-cat/FISHtheCATidle1.png" id="8_d8xw1"]
 [ext_resource type="Script" path="res://levels/main/FISHtheCAT.gd" id="8_t1fv6"]
-[ext_resource type="Texture2D" uid="uid://c07lmk3573bmv" path="res://food/dragon-roll/DragonRoll.tres" id="8_w2f6g"]
 [ext_resource type="PackedScene" uid="uid://t1gvfey4vvj1" path="res://food/base/conveyer_item.tscn" id="9_ladiw"]
 [ext_resource type="Texture2D" uid="uid://dj1ngnm3usj05" path="res://food/fish-the-cat/FISHtheCATidle2.png" id="9_nylwp"]
 [ext_resource type="Texture2D" uid="uid://ck3wbqhjt76y1" path="res://food/octopus/octopus_sushi.tres" id="10_5g7h0"]
 [ext_resource type="Texture2D" uid="uid://cb3hegfjnduha" path="res://food/fish-the-cat/FISHtheCATidle3.png" id="10_cjswc"]
 [ext_resource type="Texture2D" uid="uid://bgvnw5tqvyya0" path="res://food/fish-the-cat/FISHtheCAT_paw1.png" id="11_5r6d3"]
-[ext_resource type="Texture2D" uid="uid://dn1ucrcy820jl" path="res://food/placeholder_gunkan/gunkan_sushi.tres" id="11_br4we"]
+[ext_resource type="Texture2D" uid="uid://cs8m4jfkiiq6e" path="res://food/final_gunkan/gunkan_sushi.tres" id="11_5wab4"]
 [ext_resource type="Script" path="res://game_systems/score/score_manager.gd" id="11_lc0uk"]
-[ext_resource type="Texture2D" uid="uid://c58uuyca8t0i5" path="res://food/placeholder_fish/fish_sushi.tres" id="12_ba5nl"]
 [ext_resource type="Texture2D" uid="uid://bygb5wxx422vd" path="res://food/fish-the-cat/FISHtheCAT_paw2.png" id="12_fmx6i"]
 [ext_resource type="PackedScene" uid="uid://2foru1qm1x4k" path="res://game_systems/player_control/mouse.tscn" id="12_nwkvh"]
+[ext_resource type="Texture2D" uid="uid://xfstm0amqtde" path="res://food/sashimi/sashimi_sushi.tres" id="13_5myd1"]
 [ext_resource type="Texture2D" uid="uid://6yvm4dnmlx57" path="res://food/fish-the-cat/FISHtheCATwalk1.png" id="13_8rsdy"]
+[ext_resource type="Texture2D" uid="uid://diprmjuwjasf7" path="res://food/sexyroll/sexyroll_sushi.tres" id="14_gjpnw"]
 [ext_resource type="Texture2D" uid="uid://dx8bkilob0pf5" path="res://food/fish-the-cat/FISHtheCATwalk2.png" id="14_ux25m"]
+[ext_resource type="Texture2D" uid="uid://bxwybqx3xkm71" path="res://food/shinko/shinko_sushi.tres" id="15_rqx4r"]
 [ext_resource type="Texture2D" uid="uid://b7tjnxir2fdh5" path="res://game_systems/score/RestaurantRating.tres" id="24_i8e2i"]
+[ext_resource type="Texture2D" uid="uid://b7pgmvax3xhjf" path="res://levels/main/trashcan-final.png" id="26_3rwa5"]
+[ext_resource type="Texture2D" uid="uid://y3ctl5ygyg32" path="res://levels/main/phone.png" id="27_146du"]
 
 [sub_resource type="Animation" id="Animation_6damg"]
 length = 0.001
@@ -171,14 +173,13 @@ autoplay = "Ratings"
 
 [node name="RestaurantRatingSprite" type="Sprite2D" parent="Background/RestaurantRating" node_paths=PackedStringArray("manager")]
 position = Vector2(500, 0)
-scale = Vector2(0.487305, 0.487305)
-texture = ExtResource("4_deqqf")
+scale = Vector2(2, 2)
 script = ExtResource("5_ticuk")
 manager = NodePath("../../../GameManagement")
 
 [node name="Inspectors-hand-placeholder" type="Sprite2D" parent="Background/RestaurantRating"]
 scale = Vector2(0.833, 0.833)
-texture = ExtResource("5_arrqc")
+texture = ExtResource("4_v7nlk")
 
 [node name="Interactables" type="Node2D" parent="."]
 
@@ -220,7 +221,7 @@ shape = SubResource("RectangleShape2D_hefmn")
 script = ExtResource("7_x67wk")
 food_belt = NodePath("../Conveyor-front/FoodConveyer")
 plate_belt = NodePath("../Conveyor-rear/PlateConveyer")
-food_items = Array[AnimatedTexture]([ExtResource("8_w2f6g"), ExtResource("10_5g7h0"), ExtResource("11_br4we"), ExtResource("12_ba5nl")])
+food_items = Array[AnimatedTexture]([ExtResource("11_5wab4"), ExtResource("10_5g7h0"), ExtResource("13_5myd1"), ExtResource("14_gjpnw"), ExtResource("15_rqx4r")])
 base_item = ExtResource("9_ladiw")
 new_food_cooldown = 2.0
 
@@ -236,5 +237,13 @@ frame_progress = 0.811924
 [node name="GameManagement" type="Node2D" parent="."]
 script = ExtResource("11_lc0uk")
 food_rating_textures = ExtResource("24_i8e2i")
+
+[node name="Trashcan-final" type="Sprite2D" parent="."]
+position = Vector2(1745.13, 1211.39)
+texture = ExtResource("26_3rwa5")
+
+[node name="Phone" type="Sprite2D" parent="."]
+position = Vector2(248.876, 292.354)
+texture = ExtResource("27_146du")
 
 [node name="Mouse" parent="." instance=ExtResource("12_nwkvh")]

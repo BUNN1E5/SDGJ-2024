@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://diprmjuwjasf7"]
+
+[ext_resource type="Texture2D" uid="uid://c3jaij30m6oxy" path="res://food/sexyroll/sushi_sexyroll.png" id="1_4xcjf"]
+[ext_resource type="Texture2D" uid="uid://5s57asj47x4d" path="res://food/sexyroll/sushi_sexyroll_bad.png" id="2_cw1s3"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_4xcjf")
+frame_1/texture = ExtResource("2_cw1s3")
+frame_1/duration = 1.0

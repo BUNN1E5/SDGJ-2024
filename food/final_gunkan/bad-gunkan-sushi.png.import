@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdk6h3p7o65gq"
-path="res://.godot/imported/FISHtheCAT_ded2.png-cf1f778a59a76d4bcd8a78edf0f49f5e.ctex"
+uid="uid://tc17px1s63pk"
+path="res://.godot/imported/bad-gunkan-sushi.png-9b5aeb9d89ec201dd656c479545ccabc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://food/fish-the-cat/FISHtheCAT_ded2.png"
-dest_files=["res://.godot/imported/FISHtheCAT_ded2.png-cf1f778a59a76d4bcd8a78edf0f49f5e.ctex"]
+source_file="res://food/final_gunkan/bad-gunkan-sushi.png"
+dest_files=["res://.godot/imported/bad-gunkan-sushi.png-9b5aeb9d89ec201dd656c479545ccabc.ctex"]
 
 [params]
 

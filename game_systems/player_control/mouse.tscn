@@ -11,6 +11,7 @@ position = Vector2(66, 409)
 scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("1_xh4mv")
 script = ExtResource("2_g4la2")
+toggle_or_hold = true
 mouse_smoothness = 12
 
 [node name="Area2D" type="Area2D" parent="."]

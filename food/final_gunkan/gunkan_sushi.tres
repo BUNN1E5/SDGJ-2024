@@ -1,10 +1,10 @@
-[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://dn1ucrcy820jl"]
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://cs8m4jfkiiq6e"]
 
-[ext_resource type="Texture2D" uid="uid://bunvhxhncfq4q" path="res://food/placeholder_gunkan/good-gunkan-sushi-placeholder.png" id="1_uhve6"]
-[ext_resource type="Texture2D" uid="uid://ekrvduf7xs0w" path="res://food/placeholder_gunkan/bad-gunkan-sushi-placeholder.png" id="2_8ydr2"]
+[ext_resource type="Texture2D" uid="uid://bveuiivr1n6k6" path="res://food/final_gunkan/good-gunkan-sushi.png" id="1_m2xbv"]
+[ext_resource type="Texture2D" uid="uid://tc17px1s63pk" path="res://food/final_gunkan/bad-gunkan-sushi.png" id="2_07se6"]
 
 [resource]
 frames = 2
-frame_0/texture = ExtResource("1_uhve6")
-frame_1/texture = ExtResource("2_8ydr2")
+frame_0/texture = ExtResource("1_m2xbv")
+frame_1/texture = ExtResource("2_07se6")
 frame_1/duration = 1.0
