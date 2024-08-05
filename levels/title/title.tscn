@@ -1,12 +1,59 @@
-[gd_scene load_steps=10 format=3 uid="uid://dohxdg7w4sefl"]
+[gd_scene load_steps=15 format=3 uid="uid://dohxdg7w4sefl"]
 
 [ext_resource type="Texture2D" uid="uid://bhp0ol2lwrv0q" path="res://ui/neon-imeatation-sign.png" id="1_tqxf3"]
 [ext_resource type="Script" path="res://game_systems/game_manager.gd" id="1_ww6uu"]
 [ext_resource type="PackedScene" uid="uid://cskk4hahslcst" path="res://levels/main/main.tscn" id="2_7jfpx"]
 [ext_resource type="Texture2D" uid="uid://dyilnl5lo1dl1" path="res://ui/kitty-treat-placeholder.png" id="2_8nj2a"]
 [ext_resource type="Script" path="res://game_systems/interactable.gd" id="2_ulmgb"]
+[ext_resource type="Texture2D" uid="uid://ciw0upb4vao7c" path="res://ui/neon-imeatation-sign-lights-off-bg.png" id="3_8dttw"]
 [ext_resource type="PackedScene" uid="uid://2foru1qm1x4k" path="res://game_systems/player_control/mouse.tscn" id="3_bos0r"]
+[ext_resource type="Script" path="res://levels/main/FISHtheCAT.gd" id="3_y1nr1"]
+[ext_resource type="Texture2D" uid="uid://b8uk6kc5v5q3t" path="res://ui/neon-imeatation-sign-lights-on-bg.png" id="4_2hq10"]
 [ext_resource type="FontFile" uid="uid://dyq1rcq31em4p" path="res://font/sushibrush_titles/Sushibrush-Regular.ttf" id="6_lgq1q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3xnq"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("3_8dttw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hq10")
+}, {
+"duration": 50.0,
+"texture": ExtResource("1_tqxf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tqxf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hq10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tqxf3")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_8dttw")
+}, {
+"duration": 90.0,
+"texture": ExtResource("1_tqxf3")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_8dttw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tqxf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hq10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tqxf3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jea4h"]
 size = Vector2(40.4145, 21.0535)
@@ -15,6 +62,10 @@ size = Vector2(40.4145, 21.0535)
 font = ExtResource("6_lgq1q")
 font_size = 36
 
+[sub_resource type="LabelSettings" id="LabelSettings_b4dlq"]
+font = ExtResource("6_lgq1q")
+font_size = 41
+
 [node name="Main" type="Node2D"]
 scale = Vector2(0.667, 0.667)
 script = ExtResource("1_ww6uu")
@@ -22,9 +73,15 @@ main_scene = ExtResource("2_7jfpx")
 
 [node name="Menu" type="Node2D" parent="."]
 
-[node name="Neon-imeatation-sign" type="Sprite2D" parent="Menu"]
-position = Vector2(960, 450)
-texture = ExtResource("1_tqxf3")
+[node name="Node2D" type="Node2D" parent="Menu"]
+position = Vector2(1019.49, 431.784)
+script = ExtResource("3_y1nr1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Menu/Node2D"]
+position = Vector2(2.9985, 0)
+sprite_frames = SubResource("SpriteFrames_g3xnq")
+animation = &"Idle"
+frame_progress = 0.0828019
 
 [node name="Start" type="Area2D" parent="Menu"]
 position = Vector2(960, 1000)
@@ -72,6 +129,30 @@ text = "Quit
 label_settings = SubResource("LabelSettings_g0738")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Menu"]
+offset_left = -50.9745
+offset_top = 358.321
+offset_right = 610.025
+offset_bottom = 689.321
+rotation = -0.675855
+text = "Art & Game Design:
+Naseem Tahbaz
+Axel"
+label_settings = SubResource("LabelSettings_b4dlq")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Menu"]
+offset_left = 1365.82
+offset_top = -41.9789
+offset_right = 2026.82
+offset_bottom = 289.021
+rotation = 0.516559
+text = "The #1 Tem meneber
+Bunbun
+Dah bestiest pogammer"
+label_settings = SubResource("LabelSettings_b4dlq")
+horizontal_alignment = 1
 
 [node name="Mouse" parent="." instance=ExtResource("3_bos0r")]
 position = Vector2(350, 850)
