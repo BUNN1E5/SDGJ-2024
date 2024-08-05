@@ -1,7 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://cskk4hahslcst"]
+[gd_scene load_steps=40 format=3 uid="uid://cskk4hahslcst"]
 
+[ext_resource type="Script" path="res://game_systems/game_manager.gd" id="1_6ha1s"]
 [ext_resource type="Texture2D" uid="uid://b6kgin4m6kebf" path="res://levels/main/kitchenBG.png" id="1_prlbg"]
 [ext_resource type="Texture2D" uid="uid://c7ywsgv4shweu" path="res://levels/main/sink.png" id="2_choa1"]
+[ext_resource type="PackedScene" uid="uid://k81ymqax2mde" path="res://levels/game_over/game_over.tscn" id="2_doumd"]
 [ext_resource type="Texture2D" uid="uid://cb2vqk4iy8c6f" path="res://levels/main/kitchen_placement_reference.png" id="3_0hvof"]
 [ext_resource type="Texture2D" uid="uid://ri8be2lp5p50" path="res://levels/main/conveyor-front.png" id="4_4xd73"]
 [ext_resource type="Texture2D" uid="uid://fj1syijsinww" path="res://levels/main/conveyor-rear.png" id="4_7ym7d"]
@@ -27,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bxwybqx3xkm71" path="res://food/shinko/shinko_sushi.tres" id="15_rqx4r"]
 [ext_resource type="Texture2D" uid="uid://b7tjnxir2fdh5" path="res://game_systems/score/RestaurantRating.tres" id="24_i8e2i"]
 [ext_resource type="Texture2D" uid="uid://b7pgmvax3xhjf" path="res://levels/main/trashcan-final.png" id="26_3rwa5"]
+[ext_resource type="Script" path="res://game_systems/interactable.gd" id="27_8mw3y"]
 [ext_resource type="Texture2D" uid="uid://y3ctl5ygyg32" path="res://levels/main/phone.png" id="27_146du"]
 
 [sub_resource type="Animation" id="Animation_6damg"]
@@ -143,8 +146,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oycm3"]
+size = Vector2(20.5938, 26.8886)
+
 [node name="Main" type="Node2D"]
 scale = Vector2(0.667, 0.667)
+script = ExtResource("1_6ha1s")
+game_over_scene = ExtResource("2_doumd")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -240,9 +248,17 @@ frame_progress = 0.811924
 script = ExtResource("11_lc0uk")
 food_rating_textures = ExtResource("24_i8e2i")
 
-[node name="Trashcan-final" type="Sprite2D" parent="."]
-position = Vector2(1745.13, 1211.39)
+[node name="Trash" type="Area2D" parent="."]
+position = Vector2(1713.64, 701.649)
+script = ExtResource("27_8mw3y")
+
+[node name="Trashcan-final" type="Sprite2D" parent="Trash"]
 texture = ExtResource("26_3rwa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash"]
+position = Vector2(-2.89905, 33.6338)
+scale = Vector2(9.765, 9.765)
+shape = SubResource("RectangleShape2D_oycm3")
 
 [node name="Phone" type="Sprite2D" parent="."]
 position = Vector2(248.876, 292.354)
@@ -252,3 +268,4 @@ texture = ExtResource("27_146du")
 mouse_pickup_modifier = 0.5
 
 [connection signal="food_rating_change" from="GameManagement" to="Background/RestaurantRating/RestaurantRatingSprite" method="change_food_rating"]
+[connection signal="game_over" from="GameManagement" to="." method="game_over"]

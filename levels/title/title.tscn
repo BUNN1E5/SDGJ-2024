@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dohxdg7w4sefl"]
+[gd_scene load_steps=10 format=3 uid="uid://dohxdg7w4sefl"]
 
 [ext_resource type="Texture2D" uid="uid://bhp0ol2lwrv0q" path="res://ui/neon-imeatation-sign.png" id="1_tqxf3"]
 [ext_resource type="Script" path="res://game_systems/game_manager.gd" id="1_ww6uu"]
@@ -6,9 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dyilnl5lo1dl1" path="res://ui/kitty-treat-placeholder.png" id="2_8nj2a"]
 [ext_resource type="Script" path="res://game_systems/interactable.gd" id="2_ulmgb"]
 [ext_resource type="PackedScene" uid="uid://2foru1qm1x4k" path="res://game_systems/player_control/mouse.tscn" id="3_bos0r"]
+[ext_resource type="FontFile" uid="uid://dyq1rcq31em4p" path="res://font/sushibrush_titles/Sushibrush-Regular.ttf" id="6_lgq1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jea4h"]
 size = Vector2(40.4145, 21.0535)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0738"]
+font = ExtResource("6_lgq1q")
+font_size = 36
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.667, 0.667)
@@ -26,6 +31,7 @@ position = Vector2(960, 1000)
 script = ExtResource("2_ulmgb")
 
 [node name="Kitty-treat-placeholder" type="Sprite2D" parent="Menu/Start"]
+visible = false
 texture = ExtResource("2_8nj2a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Menu/Start"]
@@ -33,17 +39,39 @@ position = Vector2(-6, 3.04999)
 scale = Vector2(5.79, 5.79)
 shape = SubResource("RectangleShape2D_jea4h")
 
+[node name="Label" type="Label" parent="Menu/Start"]
+offset_left = -244.0
+offset_top = -38.0
+offset_right = 243.0
+offset_bottom = 56.0
+text = "Start"
+label_settings = SubResource("LabelSettings_g0738")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Quit" type="Area2D" parent="Menu"]
 position = Vector2(960, 1200)
 script = ExtResource("2_ulmgb")
 
 [node name="Kitty-treat-placeholder" type="Sprite2D" parent="Menu/Quit"]
+visible = false
 texture = ExtResource("2_8nj2a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Menu/Quit"]
 position = Vector2(-6, 3.04999)
 scale = Vector2(5.79, 5.79)
 shape = SubResource("RectangleShape2D_jea4h")
+
+[node name="Label" type="Label" parent="Menu/Quit"]
+offset_left = -244.0
+offset_top = -38.0
+offset_right = 243.0
+offset_bottom = 56.0
+text = "Quit
+"
+label_settings = SubResource("LabelSettings_g0738")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Mouse" parent="." instance=ExtResource("3_bos0r")]
 position = Vector2(350, 850)

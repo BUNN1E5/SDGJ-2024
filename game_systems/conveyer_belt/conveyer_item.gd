@@ -36,7 +36,7 @@ func _ready():
 	self.loop = false
 	self.rotates = false
 	if(sprites.get_frames() > 0):
-		self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()))
+		self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()-1))
 	pass # Replace with function body.
 	
 func _input(event):
@@ -68,8 +68,8 @@ func _process(delta):
 		if(time_in_hall <= 0):
 			#we are ready to come back into the conveyer
 			conveyer_belt.try_push_to_start(self)
-			bad_level = min(bad_level+1, sprites.get_frames())
-			self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()))
+			bad_level = min(bad_level+1, sprites.get_frames()-1)
+			self.renderder.texture = sprites.get_frame_texture(min(bad_level, sprites.get_frames()-1))
 			in_hall = false
 			on_belt = false
 		pass

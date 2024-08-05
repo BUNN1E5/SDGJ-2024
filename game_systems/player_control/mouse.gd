@@ -21,7 +21,7 @@ func _ready():
 
 
 var held_item
-signal try_pickup(item)
+signal try_pickup(item : ConveyerItem)
 func on_try_pickup(item):
 	print(item)
 	if(item != null):
@@ -41,8 +41,9 @@ func _input(event):
 			use_modifier = event.pressed #This is for holding
 		
 		if use_modifier == false:
-			if(held_item != null):
-				held_item.reparent(get_node("/root/Main"))
+			#if(held_item != null):
+				#held_item.reparent(get_node("/root/Main"))
+			pass
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

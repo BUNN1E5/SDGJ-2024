@@ -15,9 +15,12 @@ var hover_scale = default_scale * 1.2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.monitoring = true
+	button_pressed.connect(on_button_pressed)
 	pass # Replace with function body.
 
 func on_button_pressed():
+	if mouse.held_item != null:
+		mouse.remove_child(mouse.held_item)
 	pass
 
 func _input(event):

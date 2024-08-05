@@ -18,6 +18,7 @@ class_name ScoreManager
 signal food_rating_recovery
 signal food_rating_loss
 signal food_rating_change
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,7 +32,7 @@ func _process(delta):
 
 func get_food_rating_texture():
 	return food_rating_textures.get_frame_texture(
-		min(floor(food_rating), food_rating_textures.get_frames()))
+		min(floor(food_rating), food_rating_textures.get_frames()-1))
 
 #this runs when there is a change to the food rating
 #a positive change just adds, a negative change means we lose
@@ -47,6 +48,8 @@ func on_food_rating_loss():
 	food_rating = floor(food_rating - 1)
 	if(food_rating_int != floor(food_rating)):
 		food_rating_int = floor(food_rating)
+		if(food_rating_int <= 0):
+			game_over.emit()
 		food_rating_change.emit()
 	pass
 
