@@ -243,7 +243,7 @@ script = ExtResource("8_t1fv6")
 position = Vector2(178.25, -0.70465)
 sprite_frames = SubResource("SpriteFrames_8lndr")
 animation = &"Idle"
-frame_progress = 0.853635
+frame_progress = 0.0231399
 flip_h = true
 
 [node name="GameManagement" type="Node2D" parent="."]
