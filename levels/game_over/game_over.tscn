@@ -1,0 +1,244 @@
+[gd_scene load_steps=22 format=3 uid="uid://k81ymqax2mde"]
+
+[ext_resource type="Script" path="res://game_systems/game_manager.gd" id="1_1giem"]
+[ext_resource type="Texture2D" uid="uid://1xjfi5cp6857" path="res://food/fish-the-cat/FISHtheCAT_ded1.png" id="1_jq414"]
+[ext_resource type="Script" path="res://levels/main/FISHtheCAT.gd" id="1_si841"]
+[ext_resource type="Texture2D" uid="uid://bhp0ol2lwrv0q" path="res://ui/neon-imeatation-sign.png" id="2_8dmsa"]
+[ext_resource type="Texture2D" uid="uid://cdk6h3p7o65gq" path="res://food/fish-the-cat/FISHtheCAT_ded2.png" id="2_dgc6q"]
+[ext_resource type="PackedScene" uid="uid://dohxdg7w4sefl" path="res://levels/title/title.tscn" id="2_mn0gd"]
+[ext_resource type="FontFile" uid="uid://dyq1rcq31em4p" path="res://font/sushibrush_titles/Sushibrush-Regular.ttf" id="3_q2qh3"]
+[ext_resource type="Script" path="res://game_systems/animationPlayer.gd" id="4_urc1k"]
+[ext_resource type="Texture2D" uid="uid://ciw0upb4vao7c" path="res://ui/neon-imeatation-sign-lights-off-bg.png" id="5_aii4s"]
+[ext_resource type="Script" path="res://game_systems/interactable.gd" id="5_r3x3x"]
+[ext_resource type="Texture2D" uid="uid://b8uk6kc5v5q3t" path="res://ui/neon-imeatation-sign-lights-on-bg.png" id="6_a1h1g"]
+[ext_resource type="PackedScene" uid="uid://2foru1qm1x4k" path="res://game_systems/player_control/mouse.tscn" id="7_m8p1u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxlw4"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("5_aii4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a1h1g")
+}, {
+"duration": 50.0,
+"texture": ExtResource("2_8dmsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dmsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a1h1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dmsa")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_aii4s")
+}, {
+"duration": 90.0,
+"texture": ExtResource("2_8dmsa")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_aii4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dmsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a1h1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dmsa")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_5q1md"]
+resource_name = "bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [93, 103, 93]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:label_settings:shadow_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [41, 11, 41]
+}
+
+[sub_resource type="Animation" id="Animation_fyh72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [93]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:label_settings:shadow_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [41]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ej8ju"]
+_data = {
+"RESET": SubResource("Animation_fyh72"),
+"bounce": SubResource("Animation_5q1md")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3xu0"]
+font = ExtResource("3_q2qh3")
+font_size = 93
+outline_color = Color(1, 0, 0, 1)
+shadow_size = 41
+shadow_color = Color(1, 0, 0, 1)
+shadow_offset = Vector2(-2.65, 2.075)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2y4jm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jq414")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dgc6q")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkd64"]
+font = ExtResource("3_q2qh3")
+font_size = 36
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wykpv"]
+size = Vector2(40.4145, 21.0535)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85uw5"]
+size = Vector2(40.4145, 21.0535)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1giem")
+title_scene = ExtResource("2_mn0gd")
+
+[node name="Neon-imeatation-sign" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(655, 219)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8dmsa")
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(630, 271)
+scale = Vector2(0.667, 0.667)
+script = ExtResource("1_si841")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(2.9985, 0)
+sprite_frames = SubResource("SpriteFrames_nxlw4")
+animation = &"Idle"
+
+[node name="GameOver" type="Node2D" parent="."]
+position = Vector2(590, 518)
+rotation = 0.0520839
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver" node_paths=PackedStringArray("anime")]
+libraries = {
+"": SubResource("AnimationLibrary_ej8ju")
+}
+script = ExtResource("4_urc1k")
+anime = NodePath(".")
+animation = "bounce"
+
+[node name="GameOver" type="Label" parent="GameOver"]
+offset_right = 865.0
+offset_bottom = 240.0
+rotation = -0.0179681
+text = "Game Over"
+label_settings = SubResource("LabelSettings_j3xu0")
+horizontal_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1022, 669)
+script = ExtResource("1_si841")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_2y4jm")
+animation = &"Idle"
+frame_progress = 0.289297
+
+[node name="ReturnReturnToStart" type="Area2D" parent="."]
+position = Vector2(597, 690)
+script = ExtResource("5_r3x3x")
+
+[node name="Label" type="Label" parent="ReturnReturnToStart"]
+offset_left = -244.0
+offset_top = -38.0
+offset_right = 243.0
+offset_bottom = 56.0
+text = "Return to Title"
+label_settings = SubResource("LabelSettings_pkd64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReturnReturnToStart"]
+position = Vector2(-6, 3.04999)
+scale = Vector2(5.79, 5.79)
+shape = SubResource("RectangleShape2D_wykpv")
+
+[node name="Quit" type="Area2D" parent="."]
+position = Vector2(598, 866)
+script = ExtResource("5_r3x3x")
+
+[node name="Label" type="Label" parent="Quit"]
+offset_left = -255.0
+offset_top = -37.0
+offset_right = 232.0
+offset_bottom = 57.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_pkd64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
+position = Vector2(-6, 3.04999)
+scale = Vector2(5.79, 5.79)
+shape = SubResource("RectangleShape2D_85uw5")
+
+[node name="Mouse" parent="." instance=ExtResource("7_m8p1u")]
+
+[connection signal="button_pressed" from="ReturnReturnToStart" to="." method="title_screen"]
+[connection signal="button_pressed" from="Quit" to="." method="quit"]
